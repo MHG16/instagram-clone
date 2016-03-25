@@ -1,0 +1,27 @@
+{
+  "name": "instagram-clone",
+  "version": "1.0.0",
+  "description": "A clone of Instagram",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MHG16/instagram-clone.git"
+  },
+  "keywords": [
+    "instagram",
+    "Ajax",
+    "jquery"
+  ],
+  "author": "Martin Grossmann",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MHG16/instagram-clone/issues"
+  },
+  "homepage": "https://github.com/MHG16/instagram-clone#readme",
+  "dependencies": {
+    "jquery": "^2.2.2"
+  }
+}
