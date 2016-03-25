@@ -30,8 +30,9 @@ form.on('submit', function(e) {
 	console.log(caption);
 
 	//check that prefix of url is correct
-	if ((URL.substring() !== 'http://') || (URL.substring !== 'https://')) {
+	if ((URL.substring(0,7) !== 'http://') || (URL.substring(0,8) !== 'https://')) {
 		alert('The URL should start with http:// or https://')
+		console.log(URL.substring(0,8));
 		return;  
 	}
 
@@ -39,8 +40,11 @@ form.on('submit', function(e) {
 		(caption === '') {
 			console.log('Caption cannot be blank');
 			return;  
-		}
+	 }}
+		
 	}
+
+	console.log('success!');
 
 })
 
