@@ -23,29 +23,32 @@ form.on('submit', function(e) {
 	//prevent the default behavior of form being sumbitted 
 	e.preventDefault(); 
 
-	var URL = $('.imageURL').val();
-	var caption = $('.imageCaption').val();
+	var enteredUrl = $('.imageURL').val();
+	var enteredCaption = $('.imageCaption').val();
 
-	console.log(URL);
-	console.log(caption);
+	console.log(enteredUrl);
+	console.log(enteredCaption);
 
 	//check that prefix of url is correct
-	if ((URL.substring(0,7) !== 'http://') || (URL.substring(0,8) !== 'https://')) {
-		alert('The URL should start with http:// or https://')
-		console.log(URL.substring(0,8));
-		return;  
-	}
-
-	else if {
-		(caption === '') {
-			console.log('Caption cannot be blank');
+	if ((enteredUrl.substring(0, 7) !== 'http://') || (enteredUrl.substring(0, 8) !== 'https://')) {
+		alert('The URL should start with http:// or https://');
+		return; 
+	} else if 
+		(enteredCaption === '') {
+			console.log('The caption cannot be blank');
 			return;  
-	 }}
+	 };
 		
-	}
+
+	
+
 
 	console.log('success!');
 
+	//if input passes validation, add image and caption to the array
+
+	imagesArray = imagesArray.push(enteredUrl);
+	console.log(imagesArray);
 })
 
 
