@@ -30,7 +30,7 @@ form.on('submit', function(e) {
 	console.log(enteredCaption);
 
 	//check that prefix of url is correct
-	if ((enteredUrl.substring(0, 7) !== 'http://') || (enteredUrl.substring(0, 8) !== 'https://')) {
+	if (enteredUrl !== ) {
 		alert('The URL should start with http:// or https://');
 		return; 
 	} else if 
@@ -40,7 +40,7 @@ form.on('submit', function(e) {
 	 };
 		
 
-	
+
 
 
 	console.log('success!');
