@@ -15,7 +15,7 @@ var imagesArray = [];
 //2. Add the event listener
 //3. Create a function to run when that event happens.
 
-var form = $('.addImage');
+var form = $('.addToPage');
 
 //when form is submitted run the function
 form.on('submit', function(e) {
@@ -23,25 +23,23 @@ form.on('submit', function(e) {
 	//prevent the default behavior of form being sumbitted 
 	e.preventDefault(); 
 
-	var enteredUrl = $('.imageURL').val();
+	var enteredURL = $('.imageURL').val();
 	var enteredCaption = $('.imageCaption').val();
 
-	console.log(enteredUrl);
+	console.log(enteredURL);
 	console.log(enteredCaption);
 
 	//check that prefix of url is correct
-	if (enteredUrl !== ) {
-		alert('The URL should start with http:// or https://');
-		return; 
-	} else if 
-		(enteredCaption === '') {
-			console.log('The caption cannot be blank');
+	if ((enteredURL.substring(0, 7) !== 'http://') || (enteredURL.substring(0, 8) !== 'https://')) {
+		alert('The URL must begin with http:// or https://');
+		return;
+	}
+
+	else if (enteredCaption === '') {
+			alert('The caption cannot be blank');
 			return;  
 	 };
 		
-
-
-
 
 	console.log('success!');
 
@@ -49,6 +47,6 @@ form.on('submit', function(e) {
 
 	imagesArray = imagesArray.push(enteredUrl);
 	console.log(imagesArray);
-})
+});
 
 
