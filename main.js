@@ -30,7 +30,10 @@ form.on('submit', function(e) {
 	console.log(enteredCaption);
 
 	//check that prefix of url is correct
-	if ((enteredURL.substring(0, 7) !== 'http://') || (enteredURL.substring(0, 8) !== 'https://')) {
+	console.log(enteredURL.substring(0, 7));
+	console.log(enteredURL.substring(0, 8));
+
+	if ((enteredURL.substring(0, 7) !== 'http://') && (enteredURL.substring(0, 8) !== 'https://')) {
 		alert('The URL must begin with http:// or https://');
 		return;
 	}
@@ -39,13 +42,12 @@ form.on('submit', function(e) {
 			alert('The caption cannot be blank');
 			return;  
 	 };
-		
 
 	console.log('success!');
 
 	//if input passes validation, add image and caption to the array
 
-	imagesArray = imagesArray.push(enteredUrl);
+	imagesArray = imagesArray.push(enteredURL);
 	console.log(imagesArray);
 });
 
