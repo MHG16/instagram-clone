@@ -17,6 +17,12 @@ var imagesArray = [];
 
 var form = $('.addToPage');
 
+$(document).ready(function() {
+	$('i').click(function(e){
+    form.slideToggle();
+	});
+});
+
 //when form is submitted run the function
 form.on('submit', function(e) {
 

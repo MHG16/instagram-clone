@@ -10,7 +10,8 @@ i {
 
 form {
   padding: 2em;
-  background-color: #FFFFFF; }
+  background-color: #FFFFFF;
+  display: none; }
 
 .mobileBorder {
   background-color: #E0E1E2; }
