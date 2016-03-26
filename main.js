@@ -23,7 +23,7 @@ $(document).ready(function() {
 	});
 });
 
-//render takes the picture(URL) and caption from the user and then puts those in a image object.
+//loadImages takes the picture(URL) and caption from the user and then puts those in a image object.
 //then image object is prepended to imagesArray 
 //then iterates over the array of image objects each wih a picture(URL) and caption
 //Each object is prepended to the imageHolder DIV.  
@@ -31,17 +31,7 @@ $(document).ready(function() {
 //Inputs: array of objects, each with URL and caption
 //Outputs:  None
 
-function loadImages(array) {
 
-	imagesArray = JSON.stringify($(this).serializeArray());
-	console.log(imagesArray);
-	console.log(enteredURL);
-	console.log(enteredCaption);
-
-	$('.imageHolder').append(enteredURL+'<br>');
-	$('.imageHolder').append(enteredCaption);
-
-	}
 
 
 //when form is submitted run the function
@@ -60,7 +50,7 @@ form.on('submit', function(e) {
 		alert('The URL must begin with http:// or https://');
 		return;
 	}
-
+	//check that caption is not left blank 
 	else if (enteredCaption === '') {
 			alert('The caption cannot be blank');
 			return;  
@@ -69,9 +59,30 @@ form.on('submit', function(e) {
 	console.log('success!');
 
 	//if input passes validation, add image and caption to the array
-	loadImages();
-
 	
+	function loadImages(array) {
+
+		function image() {
+			URL: enteredURL,
+			caption: enteredCaption
+		};
+		
+		var x = new image {
+			this.URL = enteredURL,
+			this.caption = enteredCaption
+		};
+
+		imageArray.unshift(x);
+		return imageArray;
+	}
+
+
+
+	imageArray = loadImages();
+
+
+	$('.imageHolder').append(enteredURL+'<br>');
+	$('.imageHolder').append(enteredCaption);
 
 
 });

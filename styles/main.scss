@@ -15,7 +15,7 @@ i {
 form {
 	padding: 2em;  
 	background-color: #FFFFFF; 
-	display: none;   
+	display: none;     
 }
 
 
@@ -37,6 +37,8 @@ form {
 .cancel {
 	color: white;
 	background-color: #B6B6B6;
+	float: right;  
+	margin-right: 0.5em; 
 }
 
 .addImage {
@@ -46,11 +48,11 @@ form {
 }
 
 .imageHolder {
-	width: 19.75em;   
-	height: 10em;  
-	margin: 0 auto; 
+	margin: 0em 4em 0em 4em;   
+	padding: 0em 4em 0em 4em; 
 	background-color: #FFFFFF;
 }
+
 
 
 
