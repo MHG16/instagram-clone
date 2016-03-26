@@ -31,20 +31,17 @@ $(document).ready(function() {
 //Inputs: array of objects, each with URL and caption
 //Outputs:  None
 
-// function render(arr) {
+function loadImages(array) {
 
-// 	// image = {};
+	imagesArray = JSON.stringify($(this).serializeArray());
+	console.log(imagesArray);
+	console.log(enteredURL);
+	console.log(enteredCaption);
 
-// 	// image.picture = $('.pictureURL').val();
-// 	// image.caption = $('.pictureCaption').val();
+	$('.imageHolder').append(enteredURL+'<br>');
+	$('.imageHolder').append(enteredCaption);
 
-// 	for (var i = 0; i < imagesArray.length; i++) {
-	
-// 	$('imageHolder') = $('image')
-	
-// 	}
-// 	document.querySelector('.txtArea').innerHTML = todoItems; 
-// }
+	}
 
 
 //when form is submitted run the function
@@ -56,12 +53,8 @@ form.on('submit', function(e) {
 	var enteredURL = $('.pictureURL').val();
 	var enteredCaption = $('.pictureCaption').val();
 
-	console.log(enteredURL);
-	console.log(enteredCaption);
 
 	//check that prefix of url is correct
-	console.log(enteredURL.substring(0, 7));
-	console.log(enteredURL.substring(0, 8));
 
 	if ((enteredURL.substring(0, 7) !== 'http://') && (enteredURL.substring(0, 8) !== 'https://')) {
 		alert('The URL must begin with http:// or https://');
@@ -76,11 +69,10 @@ form.on('submit', function(e) {
 	console.log('success!');
 
 	//if input passes validation, add image and caption to the array
+	loadImages();
+
 	
-	imagesArray = JSON.stringify($(this).serializeArray());
-	console.log(imagesArray);
-	$('.picture').html = enteredURL;
-	$('.caption').html = enteredCaption;
+
 
 });
 

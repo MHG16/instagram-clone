@@ -35,8 +35,9 @@ form {
   float: right; }
 
 .imageHolder {
-  width: 100%;
+  width: 19.75em;
   height: 10em;
+  margin: 0 auto;
   background-color: #FFFFFF; }
 
 /*# sourceMappingURL=main.css.map */
