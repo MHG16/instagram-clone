@@ -31,28 +31,20 @@ $(document).ready(function() {
 //Inputs: array of objects, each with URL and caption
 //Outputs:  None
 
-function render(arr) {
+// function render(arr) {
 
-	image = {};
+// 	// image = {};
 
-	image.picture = $().val();
-	image.caption = $().val();
+// 	// image.picture = $('.pictureURL').val();
+// 	// image.caption = $('.pictureCaption').val();
 
-	for (var i = 0; i < imagesArray.length; i++) {
+// 	for (var i = 0; i < imagesArray.length; i++) {
 	
-	$('imageHolder') = 
+// 	$('imageHolder') = $('image')
 	
-	}
-	document.querySelector('.txtArea').innerHTML = todoItems; 
-}
-
-
-
-
-
-
-
-
+// 	}
+// 	document.querySelector('.txtArea').innerHTML = todoItems; 
+// }
 
 
 //when form is submitted run the function
@@ -84,9 +76,11 @@ form.on('submit', function(e) {
 	console.log('success!');
 
 	//if input passes validation, add image and caption to the array
-	render(arr);
-
 	
+	imagesArray = JSON.stringify($(this).serializeArray());
+	console.log(imagesArray);
+	$('.picture').html = enteredURL;
+	$('.caption').html = enteredCaption;
 
 });
 
