@@ -85,7 +85,7 @@ form.on('submit', function(e) {
 
 		//append picture and caption to boxDIV 
 		boxDIV.append('<img src="' + enteredURL + '">');
-		boxDIV.append('<p>"' + enteredCaption +'"</p>');
+		boxDIV.append('<p>' + enteredCaption +'</p>');
 
 		//append boxDIV to section  
 		$('.imageHolder').append(boxDIV);
