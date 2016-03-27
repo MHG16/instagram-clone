@@ -33,10 +33,6 @@ $(document).ready(function() {
 
 
 
-
-
-
-
 //when form is submitted run the function
 form.on('submit', function(e) {
 
@@ -79,13 +75,24 @@ form.on('submit', function(e) {
 	var now = imagesArray
 
 	console.log(now);
-	
-	//add picture and caption to .imageHolder DIV  
-	var imageEl =  $('<img />', {src: enteredURL});
 
+	//now use forEach to append each image object to a div 
 
-	$('.imageHolder').append(imageEl);
-	// $('.imageHolder').append(enteredCaption);
+	imagesArray.forEach(function(val, i, array) {
+		var boxDIV = ('<div></div');
+
+		//add picture and caption to .imageHolder DIV  
+		var pictureEl =  $('<img />', {src: enteredURL});
+		var captionEl =  $('<p class="caption"</p> , enteredCaption')
+		//var titleEl = $('<p class="title"></p>', {'data-id': val.id}).html(val.title);
+
+		//append picture and caption to boxDIV 
+		boxDIV.append(pictureEl);
+		boxDIV.append(captionEl);
+
+		//append boxDIV to section  
+		section.append(boxDIV);
+	});
 
 
 });
