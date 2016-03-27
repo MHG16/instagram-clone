@@ -76,22 +76,20 @@ form.on('submit', function(e) {
 
 	console.log(now);
 
-	//now use forEach to append each image object to a div 
+	//now use forEach to append each picture and caption to a DIV 
 
 	imagesArray.forEach(function(val, i, array) {
-		var boxDIV = ('<div></div');
+		var boxDIV = $('<div></div');
 
-		//add picture and caption to .imageHolder DIV  
-		var pictureEl =  $('<img />', {src: enteredURL});
-		var captionEl =  $('<p class="caption"</p> , enteredCaption')
-		//var titleEl = $('<p class="title"></p>', {'data-id': val.id}).html(val.title);
+		//sample picture: http://www.publicdomainpictures.net/pictures/160000/nahled/caribbean-shore-1457611808Jfq.jpg
 
 		//append picture and caption to boxDIV 
-		boxDIV.append(pictureEl);
-		boxDIV.append(captionEl);
+		boxDIV.append('<img src="' + enteredURL + '">');
+		boxDIV.append('<p>"' + enteredCaption +'"</p>');
 
 		//append boxDIV to section  
-		section.append(boxDIV);
+		$('.imageHolder').append(boxDIV);
+
 	});
 
 
