@@ -34,6 +34,9 @@ $(document).ready(function() {
 
 
 
+
+
+
 //when form is submitted run the function
 form.on('submit', function(e) {
 
@@ -58,31 +61,54 @@ form.on('submit', function(e) {
 
 	console.log('success!');
 
+	function addImages(imagesArray) {
+
+	var image = new Object();
+
+	image.URL =  enteredURL;
+	image.caption =  enteredCaption;
+
+	imagesArray.unshift(image);  
+
+	//$(‘.imageHolder’).append(enteredURL); 
+	//$(‘.imageHolder’).append(enteredCaption);
+
+	return imagesArray; 
+	};
+
+
+	addImages(imagesArray);
+
+	var now = imagesArray
+
+	console.log(now);
+
+	
 	//if input passes validation, add image and caption to the array
 	
-	function loadImages(array) {
+	// function loadImages(array) {
 
-		function image() {
-			URL: enteredURL,
-			caption: enteredCaption
-		};
+	// 	function image() {
+	// 		URL: enteredURL,
+	// 		caption: enteredCaption
+	// 	};
 		
-		var x = new image {
-			this.URL = enteredURL,
-			this.caption = enteredCaption
-		};
+	// 	var x = new image {
+	// 		this.URL = enteredURL,
+	// 		this.caption = enteredCaption
+	// 	};
 
-		imageArray.unshift(x);
-		return imageArray;
-	}
-
-
-
-	imageArray = loadImages();
+	// 	imageArray.unshift(x);
+	// 	return imageArray;
+	// }
 
 
-	$('.imageHolder').append(enteredURL+'<br>');
-	$('.imageHolder').append(enteredCaption);
+
+	// imageArray = loadImages();
+
+
+	// $('.imageHolder').append(enteredURL+'<br>');
+	// $('.imageHolder').append(enteredCaption);
 
 
 });
