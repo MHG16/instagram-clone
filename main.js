@@ -63,17 +63,14 @@ form.on('submit', function(e) {
 
 	function addImages(imagesArray) {
 
-	var image = new Object();
+		var image = new Object();
 
-	image.URL =  enteredURL;
-	image.caption =  enteredCaption;
+		image.URL =  enteredURL;
+		image.caption =  enteredCaption;
 
-	imagesArray.unshift(image);  
+		imagesArray.unshift(image);  
 
-	//$(‘.imageHolder’).append(enteredURL); 
-	//$(‘.imageHolder’).append(enteredCaption);
-
-	return imagesArray; 
+		return imagesArray; 
 	};
 
 
@@ -82,32 +79,12 @@ form.on('submit', function(e) {
 	var now = imagesArray
 
 	console.log(now);
-
 	
-	//if input passes validation, add image and caption to the array
-	
-	// function loadImages(array) {
-
-	// 	function image() {
-	// 		URL: enteredURL,
-	// 		caption: enteredCaption
-	// 	};
-		
-	// 	var x = new image {
-	// 		this.URL = enteredURL,
-	// 		this.caption = enteredCaption
-	// 	};
-
-	// 	imageArray.unshift(x);
-	// 	return imageArray;
-	// }
+	//add picture and caption to .imageHolder DIV  
+	var imageEl =  $('<img />', {src: enteredURL});
 
 
-
-	// imageArray = loadImages();
-
-
-	// $('.imageHolder').append(enteredURL+'<br>');
+	$('.imageHolder').append(imageEl);
 	// $('.imageHolder').append(enteredCaption);
 
 
