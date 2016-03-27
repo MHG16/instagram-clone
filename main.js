@@ -55,7 +55,7 @@ form.on('submit', function(e) {
 			return;  
 	 };
 
-	console.log('success!');
+	//console.log('success!');
 
 	function addImages(imagesArray) {
 
@@ -69,12 +69,7 @@ form.on('submit', function(e) {
 		return imagesArray; 
 	};
 
-
 	addImages(imagesArray);
-
-	var now = imagesArray
-
-	console.log(now);
 
 	//now use forEach to append each picture and caption to a DIV 
 
@@ -92,6 +87,30 @@ form.on('submit', function(e) {
 
 	});
 
+	//now need to 'POST' the imagesArray to the tiny pizza server
+	imagesArray.forEach(function(image) {
+
+	var settings = $.ajax ({
+
+		url: 'http://small-tiyfe.herokuapp.com/collections/martin-grossmann',
+		type: 'post',
+		data: image, 
+		datatype: 'json',
+	 
+		success: function(data) {
+	     	console.log(images);
+	 	},
+
+		error: function(err) {
+			console.log(err);
+		},
+
+		complete: function() {
+			console.log('I got a message');
+		}
+	})
+
+});
 
 });
 

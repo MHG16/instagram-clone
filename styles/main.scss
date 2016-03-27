@@ -34,17 +34,20 @@ form {
 	margin-top: 0.5em; 
 }
 
+.buttons {
+	float: right;  
+}
+
+
 .cancel {
 	color: white;
-	background-color: #B6B6B6;
-	float: right;  
+	background-color: #B6B6B6; 
 	margin-right: 0.5em; 
 }
 
 .addImage {
 	color: white;
 	background-color: #17AA56;
-	float: right;  
 }
 
 .imageHolder {
@@ -53,9 +56,15 @@ form {
 	background-color: #FFFFFF;
 }
 
+img {
+	margin: 0em 4em;
+	padding: 0em 4em; 
+}
 
 .caption {
-	height: 4em;  
+	height: 4em; 
+	color: #767073;
+	 
 }
 
 

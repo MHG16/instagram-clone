@@ -41,7 +41,12 @@ form {
   padding: 0em 4em 0em 4em;
   background-color: #FFFFFF; }
 
+img {
+  margin: 0em 4em;
+  padding: 0em 4em; }
+
 .caption {
-  height: 4em; }
+  height: 4em;
+  color: #767073; }
 
 /*# sourceMappingURL=main.css.map */
