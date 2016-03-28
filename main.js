@@ -21,15 +21,27 @@ $(document).ready(function() {
 	$('i').click(function(e){
     form.slideToggle();
 	});
+
+	//load the array from the server when the page loads  
+	var settings = {
+
+	url: 'http://small-tiyfe.herokuapp.com/collections/mgrossmann',
+
+	type: 'GET',
+	dataType: 'json',
+	success: handleData,
+	error: function(err) {
+		console.log(err);
+	},
+	complete: function() {
+		console.log('I got a response');
+		}
+	};
+
+$.ajax(settings);
+
 });
 
-//loadImages takes the picture(URL) and caption from the user and then puts those in a image object.
-//then image object is prepended to imagesArray 
-//then iterates over the array of image objects each wih a picture(URL) and caption
-//Each object is prepended to the imageHolder DIV.  
-
-//Inputs: array of objects, each with URL and caption
-//Outputs:  None
 
 
 
