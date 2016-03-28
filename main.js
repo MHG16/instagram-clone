@@ -92,13 +92,13 @@ form.on('submit', function(e) {
 
 	var settings = $.ajax ({
 
-		url: 'http://small-tiyfe.herokuapp.com/collections/martin-grossmann',
+		url: 'http://small-tiyfe.herokuapp.com/collections/mgrossmann',
 		type: 'post',
 		data: image, 
 		datatype: 'json',
 	 
 		success: function(data) {
-	     	console.log(images);
+	     	console.log(imagesArray);
 	 	},
 
 		error: function(err) {
@@ -107,10 +107,10 @@ form.on('submit', function(e) {
 
 		complete: function() {
 			console.log('I got a message');
-		}
-	})
+			}
+		})
 
-});
+	});
 
 });
 
