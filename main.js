@@ -19,26 +19,28 @@ var form = $('.addToPage');
 
 $(document).ready(function() {
 	$('i').click(function(e){
-    form.slideToggle();
+    	form.slideToggle();
 	});
 
 	//load the array from the server when the page loads  
-// 	var settings = {
+	var settings = {
 
-// 	url: 'http://small-tiyfe.herokuapp.com/collections/mgrossmann',
+		url: 'http://small-tiyfe.herokuapp.com/collections/mgrossmann',
 
-// 	type: 'GET',
-// 	dataType: 'json',
-// 	success: handleData,
-// 	error: function(err) {
-// 		console.log(err);
-// 	},
-// 	complete: function() {
-// 		console.log('I got a response');
-// 		}
-// 	};
+		type: 'GET',
+		dataType: 'json',
+		success: function(data) {
+			console.log(data);
+		}, 
+		error: function(err) {
+			console.log(err);
+		},
+		complete: function() {
+			console.log('I got a response');
+		}
+	};
 
-// $.ajax(settings);
+	$.ajax(settings);
 
 });
 
