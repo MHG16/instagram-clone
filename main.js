@@ -43,14 +43,15 @@ $(document).ready(function() {
 	$.ajax(settings);
 
 	function handleData(data) {
-		imagesArray.forEach(function(val, i, array) {
+		console.log(data);
+		data.forEach(function(val, i, array) {
 		var boxDIV = $('<div></div');
 
 		//sample picture: http://www.publicdomainpictures.net/pictures/160000/nahled/caribbean-shore-1457611808Jfq.jpg
 
 		//append picture and caption to boxDIV 
-		boxDIV.append('<img src="' + enteredURL + '">');
-		boxDIV.append('<p>' + enteredCaption +'</p>');
+		boxDIV.append('<img src="' + val.URL + '">');
+		boxDIV.append('<p>' + val.caption +'</p>');
 
 		//append boxDIV to section  
 		$('.imageHolder').append(boxDIV);		
