@@ -23,5 +23,8 @@
   "homepage": "https://github.com/MHG16/instagram-clone#readme",
   "dependencies": {
     "jquery": "^2.2.2"
+  },
+  "devDependencies": {
+    "babelify": "^7.2.0"
   }
 }

@@ -22,6 +22,7 @@ $(document).ready(function() {
     	form.slideToggle();
 	});
 
+
 	//load the array from the server when the page loads  
 	var settings = {
 
@@ -29,9 +30,8 @@ $(document).ready(function() {
 
 		type: 'GET',
 		dataType: 'json',
-		success: function(data) {
-			console.log(data);
-		}, 
+		success: handleData,  
+		
 		error: function(err) {
 			console.log(err);
 		},
@@ -42,9 +42,23 @@ $(document).ready(function() {
 
 	$.ajax(settings);
 
+	function handleData(data) {
+		imagesArray.forEach(function(val, i, array) {
+		var boxDIV = $('<div></div');
+
+		//sample picture: http://www.publicdomainpictures.net/pictures/160000/nahled/caribbean-shore-1457611808Jfq.jpg
+
+		//append picture and caption to boxDIV 
+		boxDIV.append('<img src="' + enteredURL + '">');
+		boxDIV.append('<p>' + enteredCaption +'</p>');
+
+		//append boxDIV to section  
+		$('.imageHolder').append(boxDIV);		
+	});	
+
+};
+
 });
-
-
 
 //when form is submitted run the function
 form.on('submit', function(e) {
