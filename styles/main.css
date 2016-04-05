@@ -13,9 +13,6 @@ form {
   background-color: #FFFFFF;
   display: none; }
 
-.mobileBorder {
-  background-color: #E0E1E2; }
-
 .pictureURL {
   width: 100%;
   margin-top: 2em; }
@@ -37,8 +34,12 @@ form {
   background-color: #17AA56; }
 
 .imageHolder {
-  width: 24em;
-  background-color: #FFFFFF; }
+  width: 20em;
+  padding: 0 4em;
+  background-color: #E0E1E2; }
+
+div {
+  background-color: #FFF; }
 
 .picture {
   width: 20em; }
@@ -46,8 +47,7 @@ form {
 .caption {
   width: 20em;
   color: #000000;
-  margin: 0em 4em;
-  padding: 0em 4em;
+  background-color: #FFF;
   text-align: center; }
 
 /*# sourceMappingURL=main.css.map */

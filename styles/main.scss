@@ -19,10 +19,6 @@ form {
 }
 
 
-.mobileBorder {
-	background-color: #E0E1E2;
-}
-
 .pictureURL {
 	width: 100%; 
 	margin-top: 2em; 
@@ -51,9 +47,13 @@ form {
 }
 
 .imageHolder {
-	width: 24em;   
+	width: 20em;   
+	padding: 0 4em;   
+	background-color: #E0E1E2;
+}
 
-	background-color: #FFFFFF;
+div {
+	background-color: #FFF;
 }
 
 .picture {
@@ -63,8 +63,7 @@ form {
 .caption {
 	width: 20em;  
 	color: #000000;
-	margin: 0em 4em;
-	padding: 0em 4em; 
+	background-color: #FFF;
 	text-align: center;  
 	 
 }
