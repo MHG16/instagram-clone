@@ -47,6 +47,8 @@ div {
 .caption {
   width: 20em;
   color: #000000;
+  padding-bottom: 2em;
+  margin-bottom: 2em;
   background-color: #FFF;
   text-align: center; }
 
