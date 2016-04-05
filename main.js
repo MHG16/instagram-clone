@@ -9,30 +9,30 @@
 //push the new items into the array when Add Image is clicked
 //then post to server
 
-var imagesArray = [];
+const imagesArray = [];
 
 //1. Select the element that you want to listen for events on
 //2. Add the event listener
 //3. Create a function to run when that event happens.
 
-var form = $('.addToPage');
+const form = $(`.addToPage`);
 
 $(document).ready(function() {
-	$('i').click(function(e){
+	$(`i`).click((e) => {
     	form.slideToggle();
 	});
 
 
 	//load the array from the server when the page loads  
-	var settings = {
+	const settings = {
 
-		url: 'http://small-tiyfe.herokuapp.com/collections/mgrossmann',
+		url: `http://small-tiyfe.herokuapp.com/collections/mgrossmann`,
 
-		type: 'GET',
-		dataType: 'json',
+		type: `GET`,
+		dataType: `json`,
 		success: handleData,  
 		
-		error: function(err) {
+		error: (err) => {
 			console.log(err);
 		},
 		complete: function() {
@@ -43,17 +43,17 @@ $(document).ready(function() {
 	$.ajax(settings);
 
 	function handleData(data) {
-		data.forEach(function(val, i, array) {
-		var boxDIV = $('<div></div');
+		data.forEach((val, i, array) => {
+		const boxDIV = $(`<div></div`);
 
 		//sample picture: http://www.publicdomainpictures.net/pictures/160000/nahled/caribbean-shore-1457611808Jfq.jpg
 
 		//append picture and caption to boxDIV 
-		boxDIV.append('<img class="picture" src="' + val.URL + '">');
-		boxDIV.append('<p class="caption">' + val.caption +'</p>');
+		boxDIV.append(`<img class="picture" src="' + val.URL + '">`);
+		boxDIV.append(`<p class="caption">' + val.caption +'</p>`);
 
 		//append boxDIV to section  
-		$('.imageHolder').append(boxDIV);		
+		$(`.imageHolder`).append(boxDIV);		
 	});	
 
 };
@@ -61,24 +61,24 @@ $(document).ready(function() {
 });
 
 //when form is submitted run the function
-form.on('submit', function(e) {
+form.on(`submit`, (e) => {
 
 	//prevent the default behavior of form being sumbitted 
 	e.preventDefault(); 
 
-	var enteredURL = $('.pictureURL').val();
-	var enteredCaption = $('.pictureCaption').val();
+	const enteredURL = $(`.pictureURL`).val();
+	const enteredCaption = $(`.pictureCaption`).val();
 
 
 	//check that prefix of url is correct
 
-	if ((enteredURL.substring(0, 7) !== 'http://') && (enteredURL.substring(0, 8) !== 'https://')) {
-		alert('The URL must begin with http:// or https://');
+	if ((enteredURL.substring(0, 7) !== `http://``) && (enteredURL.substring(0, 8) !== `https://``)) {
+		alert(`The URL must begin with http:// or https://`);
 		return;
 	}
 	//check that caption is not left blank 
-	else if (enteredCaption === '') {
-			alert('The caption cannot be blank');
+	else if (enteredCaption === ``) {
+			alert(`The caption cannot be blank`);
 			return;  
 	 };
 
@@ -86,7 +86,7 @@ form.on('submit', function(e) {
 
 	function addImages(imagesArray) {
 
-		var image = new Object();
+		const image = new Object();
 
 		image.URL =  enteredURL;
 		image.caption =  enteredCaption;
@@ -100,29 +100,29 @@ form.on('submit', function(e) {
 
 	//now use forEach to append each picture and caption to a DIV 
 
-	imagesArray.forEach(function(val, i, array) {
-		var boxDIV = $('<div></div');
+	imagesArray.forEach((val, i, array) => {
+		const boxDIV = $(`<div></div`);
 
 		//sample picture: http://www.publicdomainpictures.net/pictures/160000/nahled/caribbean-shore-1457611808Jfq.jpg
 
 		//append picture and caption to boxDIV 
-		boxDIV.append('<img src="' + enteredURL + '">');
-		boxDIV.append('<p>' + enteredCaption +'</p>');
+		boxDIV.append(`<img src="` + enteredURL + `">`);
+		boxDIV.append(`<p>` + enteredCaption +`</p>`);
 
 		//append boxDIV to section  
-		$('.imageHolder').append(boxDIV);
+		$(`.imageHolder`).append(boxDIV);
 
 	});
 
 	//now need to 'POST' the imagesArray to the tiny pizza server
-	imagesArray.forEach(function(image) {
+	imagesArray.forEach((image) => {
 
-	var settings = $.ajax ({
+	const settings = $.ajax ({
 
-		url: 'http://small-tiyfe.herokuapp.com/collections/mgrossmann',
-		type: 'post',
+		url: `http://small-tiyfe.herokuapp.com/collections/mgrossmann`,
+		type: `post`,
 		data: image, 
-		datatype: 'json',
+		datatype: `json`,
 	 
 		success: function(data) {
 	     	console.log(imagesArray);
@@ -133,7 +133,7 @@ form.on('submit', function(e) {
 		},
 
 		complete: function() {
-			console.log('I got a message');
+			console.log(`I got a message`);
 			}
 		})
 
