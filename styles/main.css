@@ -39,14 +39,15 @@ form {
   background-color: #E0E1E2; }
 
 div {
-  background-color: #FFF; }
+  background-color: #FFF;
+  box-shadow: 1px 1px 1px black; }
 
 .picture {
   width: 20em; }
 
 .caption {
   width: 20em;
-  color: #000000;
+  color: #A28077;
   padding-bottom: 2em;
   margin-bottom: 2em;
   background-color: #FFF;
