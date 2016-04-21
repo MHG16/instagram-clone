@@ -1,5 +1,6 @@
 body {
 	background-color: #EDEEEF;
+	padding: 2em 4em;
 }
 
 
@@ -74,13 +75,14 @@ div {
 //add media query here for desktop breakpoint
 //also style the form a bit more
 
-//@media(min-width: 767px) {
+@media (min-width: 979px) {
+	 
+		.imageHolder {
+			max-width: 980px;  
+		
+	}	
+}
 
-
-
-
-
-//}
 
 
 
