@@ -15,10 +15,10 @@ const imagesArray = [];
 //2. Add the event listener
 //3. Create a function to run when that event happens.
 
-const form = $(`.addToPage`);
+const form = $('.addToPage');
 
 $(document).ready(function() {
-	$(`i`).click((e) => {
+	$('i').click((e) => {
     	form.slideToggle();
 	});
 
@@ -26,10 +26,10 @@ $(document).ready(function() {
 	//load the array from the server when the page loads  
 	const settings = {
 
-		url: `http://small-tiyfe.herokuapp.com/collections/mgrossmann`,
+		url: 'http://small-tiyfe.herokuapp.com/collections/mgrossmann',
 
-		type: `GET`,
-		dataType: `json`,
+		type: 'GET',
+		dataType: 'json',
 		success: handleData,  
 		
 		error: (err) => {
@@ -44,16 +44,16 @@ $(document).ready(function() {
 
 	function handleData(data) {
 		data.forEach((val, i, array) => {
-		const boxDIV = $(`<div></div`);
+		const boxDIV = $('<div></div');
 
 		//sample picture: http://www.publicdomainpictures.net/pictures/160000/nahled/caribbean-shore-1457611808Jfq.jpg
 
 		//append picture and caption to boxDIV 
-		boxDIV.append(`<img class="picture" src="' + val.URL + '">`);
-		boxDIV.append(`<p class="caption">' + val.caption +'</p>`);
+		boxDIV.append('<img class="picture" src="'+ val.URL + '">');
+		boxDIV.append('<p class="caption">' + val.caption +'</p>');
 
 		//append boxDIV to section  
-		$(`.imageHolder`).append(boxDIV);		
+		$('.imageHolder').append(boxDIV);		
 	});	
 
 };
@@ -61,24 +61,24 @@ $(document).ready(function() {
 });
 
 //when form is submitted run the function
-form.on(`submit`, (e) => {
+form.on('submit', (e) => {
 
 	//prevent the default behavior of form being sumbitted 
 	e.preventDefault(); 
 
-	const enteredURL = $(`.pictureURL`).val();
-	const enteredCaption = $(`.pictureCaption`).val();
+	const enteredURL = $('.pictureURL').val();
+	const enteredCaption = $('.pictureCaption').val();
 
 
 	//check that prefix of url is correct
 
-	if ((enteredURL.substring(0, 7) !== `http://``) && (enteredURL.substring(0, 8) !== `https://``)) {
-		alert(`The URL must begin with http:// or https://`);
+	if ((enteredURL.substring(0, 7) !== 'http://') && (enteredURL.substring(0, 8) !== 'https://')) {
+		alert('The URL must begin with http:// or https://');
 		return;
 	}
 	//check that caption is not left blank 
-	else if (enteredCaption === ``) {
-			alert(`The caption cannot be blank`);
+	else if (enteredCaption === '') {
+			alert('The caption cannot be blank');
 			return;  
 	 };
 
@@ -101,16 +101,18 @@ form.on(`submit`, (e) => {
 	//now use forEach to append each picture and caption to a DIV 
 
 	imagesArray.forEach((val, i, array) => {
-		const boxDIV = $(`<div></div`);
+		const boxDIV = $('<div></div');
 
 		//sample picture: http://www.publicdomainpictures.net/pictures/160000/nahled/caribbean-shore-1457611808Jfq.jpg
 
+
+
 		//append picture and caption to boxDIV 
-		boxDIV.append(`<img src="` + enteredURL + `">`);
-		boxDIV.append(`<p>` + enteredCaption +`</p>`);
+		boxDIV.append('<img class="picture" src="' + val.URL + '">');
+		boxDIV.append('<p>' + enteredCaption +'</p>');
 
 		//append boxDIV to section  
-		$(`.imageHolder`).append(boxDIV);
+		$('.imageHolder').append(boxDIV);
 
 	});
 
@@ -119,10 +121,10 @@ form.on(`submit`, (e) => {
 
 	const settings = $.ajax ({
 
-		url: `http://small-tiyfe.herokuapp.com/collections/mgrossmann`,
-		type: `post`,
+		url: 'http://small-tiyfe.herokuapp.com/collections/mgrossmann',
+		type: 'post',
 		data: image, 
-		datatype: `json`,
+		datatype: 'json',
 	 
 		success: function(data) {
 	     	console.log(imagesArray);
@@ -133,7 +135,7 @@ form.on(`submit`, (e) => {
 		},
 
 		complete: function() {
-			console.log(`I got a message`);
+			console.log('I got a message');
 			}
 		})
 
