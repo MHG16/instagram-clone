@@ -47,7 +47,7 @@ form {
 }
 
 .imageHolder {
-	width: 20em;   
+	//width: 20em;   
 	padding: 0 4em;   
 	background-color: #E0E1E2;
 }
@@ -58,7 +58,7 @@ div {
 }
 
 .picture {
-	width: 20em;  
+	//width: 20em;  
 }
 
 .caption {
@@ -71,6 +71,16 @@ div {
 	 
 }
 
+//add media query here for desktop breakpoint
+//also style the form a bit more
+
+//@media(min-width: 767px) {
+
+
+
+
+
+//}
 
 
 
