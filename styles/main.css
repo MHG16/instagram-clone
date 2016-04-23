@@ -1,5 +1,6 @@
 body {
-  background-color: #EDEEEF; }
+  background-color: #EDEEEF;
+  padding: 0 4em; }
 
 .header {
   background-color: #446C99;
@@ -41,12 +42,19 @@ div {
   background-color: #FFF;
   box-shadow: 1px 1px 1px black; }
 
+.picture {
+  width: 100%; }
+
 .caption {
-  width: 20em;
+  width: 100%;
   color: #A28077;
   padding-bottom: 2em;
   margin-bottom: 2em;
   background-color: #FFF;
   text-align: center; }
+
+@media (min-width: 979px) {
+  .imageHolder {
+    max-width: 980px; } }
 
 /*# sourceMappingURL=main.css.map */

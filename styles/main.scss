@@ -1,6 +1,6 @@
 body {
 	background-color: #EDEEEF;
-	padding: 2em 4em;
+	padding: 0 4em;
 }
 
 
@@ -21,7 +21,7 @@ form {
 
 
 .pictureURL {
-	width: 100%; 
+	width: 100%;    
 	margin-top: 2em; 
 }
 
@@ -39,7 +39,7 @@ form {
 .cancel {
 	color: white;
 	background-color: #B6B6B6; 
-	margin-right: 0.5em; 
+	margin-right: 0.5em;   
 }
 
 .addImage {
@@ -48,7 +48,7 @@ form {
 }
 
 .imageHolder {
-	//width: 20em;   
+	 
 	padding: 0 4em;   
 	background-color: #E0E1E2;
 }
@@ -59,11 +59,11 @@ div {
 }
 
 .picture {
-	//width: 20em;  
+	width: 100%;  
 }
 
 .caption {
-	width: 20em;  
+	width: 100%;  
 	color: #A28077;
 	padding-bottom: 2em;  
 	margin-bottom: 2em;  
